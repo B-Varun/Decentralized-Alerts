@@ -21,9 +21,8 @@ function App() {
     console.log("Contract instance : ");
     console.log(contractInstance);
     if (contractInstance) {
-      contractInstance.on("AlertCreated", (owner, message) => {
-        console.log("An alert is published whose owner is : " + owner);
-        console.log("Message is : " + message);
+      contractInstance.on("AlertCreated", (alertId) => {
+        console.log("ID of the alert is : " + alertId);
       });
     } else {
       console.log("Contract instance not available for listening to events");
@@ -43,7 +42,7 @@ function App() {
       setSigner(signer);
       setAccount(accounts[0]);
 
-      const contractAddress = "0xeE701B5b228D088CB6c375d1f07ed6c58Be7b166";
+      const contractAddress = "0xDDa165f07f231dc7F973587B5318BD5409311e9D";
       const contract = new ethers.Contract(
         contractAddress,
         contractABI,

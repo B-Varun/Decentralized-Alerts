@@ -1,0 +1,317 @@
+{
+  "contractName": "Responder",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "management",
+      "outputs": [
+        {
+          "internalType": "contract AlertManagement",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "respond",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"management\",\"outputs\":[{\"internalType\":\"contract AlertManagement\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"respond\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Responder.sol\":\"Responder\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/AlertManagement.sol\":{\"keccak256\":\"0xa38973dbfab00972af35df300cda69ba6d9c6778d31628483756197cca625092\",\"urls\":[\"bzz-raw://523c0e1498a1bdbfa4c3755ab97d3c1f7152c2d2fb8747adce6f96bed96cced8\",\"dweb:/ipfs/QmdVJsLGaRWLvjsFUxu9tyWxfSexyoCTLBPQSUYYcHbyyo\"]},\"project:/contracts/Responder.sol\":{\"keccak256\":\"0x7a7fff888da6b8d4d46eca56cb4ccd561907a95cd3942b7ee0333a802e11ac51\",\"urls\":[\"bzz-raw://a9e7cb928577160a00f51b7e67296d833021b24bd0fbeca09598db857d2a4dd0\",\"dweb:/ipfs/QmU3Af8NVsKZQ9c1cgUzYGngcLq9iextCoQzjpgENUzQQE\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060e38061001f6000396000f3fe6080604052348015600f57600080fd5b506004361060325760003560e01c806388a8d602146037578063db16aab914607f575b600080fd5b603d6087565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b608560ac565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b56fea265627a7a7231582059343d6381eb4f5b418931dc39e417e7be10cc4ce4434c8c9035918f6452cb3264736f6c63430005100032",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060325760003560e01c806388a8d602146037578063db16aab914607f575b600080fd5b603d6087565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b608560ac565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b56fea265627a7a7231582059343d6381eb4f5b418931dc39e417e7be10cc4ce4434c8c9035918f6452cb3264736f6c63430005100032",
+  "sourceMap": "134:309:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;134:309:2;;;;;;;",
+  "deployedSourceMap": "134:309:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;134:309:2;;;;;;;;;;;;;;;;;;;;;;;;156:33;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;403:35;;;:::i;:::-;;156:33;;;;;;;;;;;;;:::o;403:35::-;:::o",
+  "source": "// SPDX-License-Identifier: GPL-3.0\r\n// pragma solidity >=0.8.0 <=0.9.0;\r\npragma solidity >=0.5.16;\r\nimport \"./AlertManagement.sol\";\r\ncontract Responder{\r\n AlertManagement public management;\r\n\r\n//  constructor(address _address) public{\r\n//     management = AlertManagement(_address);\r\n//  }\r\n\r\n// function handleAlert(uint alertId) public{\r\n//     management.close_Alert_By_Responder(alertId);\r\n// }\r\n\r\nfunction respond() public{\r\n    \r\n}\r\n\r\n}",
+  "sourcePath": "C:\\Users\\varunbailapudi\\Documents\\Fall 2023\\CSC 299\\HardHat Impl\\New folder\\BC Alerts\\contracts\\Responder.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/Responder.sol",
+    "exportedSymbols": {
+      "Responder": [
+        177
+      ]
+    },
+    "id": 178,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 169,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".16"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "74:25:2"
+      },
+      {
+        "absolutePath": "project:/contracts/AlertManagement.sol",
+        "file": "./AlertManagement.sol",
+        "id": 170,
+        "nodeType": "ImportDirective",
+        "scope": 178,
+        "sourceUnit": 135,
+        "src": "101:31:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 177,
+        "linearizedBaseContracts": [
+          177
+        ],
+        "name": "Responder",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 172,
+            "name": "management",
+            "nodeType": "VariableDeclaration",
+            "scope": 177,
+            "src": "156:33:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_AlertManagement_$134",
+              "typeString": "contract AlertManagement"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 171,
+              "name": "AlertManagement",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 134,
+              "src": "156:15:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_AlertManagement_$134",
+                "typeString": "contract AlertManagement"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 175,
+              "nodeType": "Block",
+              "src": "428:10:2",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 176,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "respond",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 173,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "419:2:2"
+            },
+            "returnParameters": {
+              "id": 174,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "428:0:2"
+            },
+            "scope": 177,
+            "src": "403:35:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 178,
+        "src": "134:309:2"
+      }
+    ],
+    "src": "74:369:2"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/Responder.sol",
+      "exportedSymbols": {
+        "Responder": [
+          177
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.5",
+            ".16"
+          ]
+        },
+        "id": 169,
+        "name": "PragmaDirective",
+        "src": "74:25:2"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 135,
+          "absolutePath": "project:/contracts/AlertManagement.sol",
+          "file": "./AlertManagement.sol",
+          "scope": 178,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 170,
+        "name": "ImportDirective",
+        "src": "101:31:2"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            177
+          ],
+          "name": "Responder",
+          "scope": 178
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": false,
+              "name": "management",
+              "scope": 177,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "contract AlertManagement",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "AlertManagement",
+                  "referencedDeclaration": 134,
+                  "type": "contract AlertManagement"
+                },
+                "id": 171,
+                "name": "UserDefinedTypeName",
+                "src": "156:15:2"
+              }
+            ],
+            "id": 172,
+            "name": "VariableDeclaration",
+            "src": "156:33:2"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "respond",
+              "scope": 177,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 173,
+                "name": "ParameterList",
+                "src": "419:2:2"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 174,
+                "name": "ParameterList",
+                "src": "428:0:2"
+              },
+              {
+                "attributes": {
+                  "statements": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 175,
+                "name": "Block",
+                "src": "428:10:2"
+              }
+            ],
+            "id": 176,
+            "name": "FunctionDefinition",
+            "src": "403:35:2"
+          }
+        ],
+        "id": 177,
+        "name": "ContractDefinition",
+        "src": "134:309:2"
+      }
+    ],
+    "id": 178,
+    "name": "SourceUnit",
+    "src": "74:369:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x48C150F272c5aA683802821E4902d5e18FF7C919",
+      "transactionHash": "0x8860df6e47ae31491b550a3e16e0f1476446e34d048ce0204468dd4a3262b3f7"
+    }
+  },
+  "schemaVersion": "3.4.16",
+  "updatedAt": "2023-11-30T22:57:19.904Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

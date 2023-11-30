@@ -4,15 +4,9 @@
     "inputs": [
       {
         "indexed": false,
-        "internalType": "address",
-        "name": "creator",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "string",
-        "name": "message",
-        "type": "string"
+        "internalType": "uint256",
+        "name": "alertId",
+        "type": "uint256"
       }
     ],
     "name": "AlertCreated",
@@ -43,10 +37,51 @@
         "internalType": "string",
         "name": "title",
         "type": "string"
+      },
+      {
+        "internalType": "enum AlertManagement.Alert_Status",
+        "name": "status",
+        "type": "uint8"
       }
     ],
     "payable": false,
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "getAlert_Close_Status",
+    "outputs": [
+      {
+        "internalType": "enum AlertManagement.Alert_Status",
+        "name": "",
+        "type": "uint8"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "alertId",
+        "type": "uint256"
+      }
+    ],
+    "name": "close_Alert_By_Responder",
+    "outputs": [
+      {
+        "internalType": "enum AlertManagement.Alert_Status",
+        "name": "",
+        "type": "uint8"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -136,6 +171,30 @@
       }
     ],
     "name": "setCompleted",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "management",
+    "outputs": [
+      {
+        "internalType": "contract AlertManagement",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "respond",
     "outputs": [],
     "payable": false,
     "stateMutability": "nonpayable",

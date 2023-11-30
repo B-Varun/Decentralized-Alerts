@@ -20,11 +20,25 @@ struct Alert{
     uint alertID;
     string description;
     string title;
+    // address recipient_addrress;
+    // Alert_Type type_Of_Alert;
+    Alert_Status status;
+    // address responder_address;
 }
 
-event AlertCreated(address creator, string message);
+event AlertCreated(uint alertId);
 
 mapping(uint => Alert) public alerts;
+
+function getAlert_Close_Status() public pure returns(Alert_Status){
+    return Alert_Status.Closed;
+}
+
+function close_Alert_By_Responder(uint alertId) public returns(Alert_Status){
+    require(alertId<=alert_Count, "Alert with the mentioned ID is not registered");
+    alerts[alertId].status = getAlert_Close_Status();
+    return alerts[alertId].status;
+}
 
 function getAlert(uint id) public view returns(string memory){
     return alerts[id].title;
@@ -32,8 +46,8 @@ function getAlert(uint id) public view returns(string memory){
 
 function setAlert(uint id, string memory title, string memory desc) private{
     require(id>0);
-    alerts[id-1] = Alert({alertID:id, title:title, description:desc});
-    emit AlertCreated(msg.sender, desc);
+    alerts[id-1] = Alert({alertID:id, title:title, description:desc, status: Alert_Status.Open});
+    emit AlertCreated(id);
 }
 
 function createAlert(string memory title, string memory description) public returns(uint){
