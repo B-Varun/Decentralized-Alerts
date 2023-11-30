@@ -1,0 +1,4 @@
+1. Initial code pushed to repo is able to create and publish alerts.
+______________
+
+Code to respond to alerts have to be pushed.
