@@ -39,9 +39,24 @@
         "type": "string"
       },
       {
+        "internalType": "string",
+        "name": "recipient_addrress",
+        "type": "string"
+      },
+      {
+        "internalType": "enum AlertManagement.Alert_Type",
+        "name": "type_Of_Alert",
+        "type": "uint8"
+      },
+      {
         "internalType": "enum AlertManagement.Alert_Status",
         "name": "status",
         "type": "uint8"
+      },
+      {
+        "internalType": "address",
+        "name": "responder_address",
+        "type": "address"
       }
     ],
     "payable": false,
@@ -70,6 +85,11 @@
         "internalType": "uint256",
         "name": "alertId",
         "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "responderAddr",
+        "type": "address"
       }
     ],
     "name": "close_Alert_By_Responder",
@@ -116,6 +136,16 @@
       {
         "internalType": "string",
         "name": "description",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "alertType",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "recipientAddr",
         "type": "string"
       }
     ],
@@ -177,6 +207,18 @@
     "type": "function"
   },
   {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_address",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
     "constant": true,
     "inputs": [],
     "name": "management",
@@ -193,8 +235,14 @@
   },
   {
     "constant": false,
-    "inputs": [],
-    "name": "respond",
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "alertId",
+        "type": "uint256"
+      }
+    ],
+    "name": "handleAlert",
     "outputs": [],
     "payable": false,
     "stateMutability": "nonpayable",

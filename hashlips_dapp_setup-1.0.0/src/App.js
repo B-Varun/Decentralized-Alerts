@@ -3,52 +3,80 @@ import { ethers } from "ethers";
 import { useState, useEffect } from "react";
 import contractABI from "./abi/contractABI.json";
 import Header from "./components/Header";
-// const Web3 = require("web3");
-// const contractAbi = require("./abi/contractABI.json");
 
 function App() {
   const [account, setAccount] = useState("");
   const [signer, setSigner] = useState(null);
-  const [contractInstance, setContractInstance] = useState(null);
-
-  // const balance = async (tokenAddress) => {
-  //   const contract = new ethers.Contract(tokenAddress, contractABI, signer);
-  //   const balance = await contract.balanceOf(account);
-  //   console.log(balance.toString());
-  // };
+  const [alerterContractInstance, setAlerterContractInstance] = useState(null);
+  const [responderContractInstance, setResponderContractInstance] =
+    useState(null);
+  const [responderContract, setResponderContract] = useState(null);
 
   const listenToEvent = () => {
     console.log("Contract instance : ");
-    console.log(contractInstance);
-    if (contractInstance) {
-      contractInstance.on("AlertCreated", (alertId) => {
+    console.log(alerterContractInstance);
+    if (alerterContractInstance) {
+      alerterContractInstance.on("AlertCreated", (alertId) => {
         console.log("ID of the alert is : " + alertId);
+        if (responderContractInstance) {
+          // Code to respond to events
+          console.log("\n\nGot an event\n\n");
+          responderContractInstance.handleAlert(alertId);
+        } else {
+          console.log("Responder instance not available");
+        }
       });
     } else {
-      console.log("Contract instance not available for listening to events");
+      console.log(
+        "Alerter Contract instance not available for listening to events"
+      );
+    }
+  };
+
+  const listenToEventUsingAddress = (address) => {
+    console.log("Contract instance : ");
+    console.log(alerterContractInstance);
+    if (alerterContractInstance) {
+      if (responderContractInstance) {
+        responderContractInstance.handleAlertByAddress(address);
+      }
+    } else {
+      console.log(
+        "Alerter Contract instance not available for listening to events"
+      );
     }
   };
 
   const connect = async () => {
+    // const myBlockchain_URL = "http://127.0.0.1:7545";
     const myBlockchain_URL = "http://127.0.0.1:7545";
 
     if (typeof window.ethereum !== "undefined") {
       const accounts = await window.ethereum.request({
         method: "eth_requestAccounts",
       });
-      // const provider = new ethers.providers.Web3Provider(window.ethereum);
+
       const provider = new ethers.providers.JsonRpcProvider(myBlockchain_URL);
       const signer = provider.getSigner();
       setSigner(signer);
       setAccount(accounts[0]);
 
-      const contractAddress = "0xDDa165f07f231dc7F973587B5318BD5409311e9D";
-      const contract = new ethers.Contract(
-        contractAddress,
+      const alerterContractAddress =
+        "0xd483db3ab0aa30185d068fa3cdf3d61224639a6f";
+      const responderContractAddress =
+        "0xd9890EC07951D905b462725e65113eD154b4f1Fe";
+      const alerterContract = new ethers.Contract(
+        alerterContractAddress,
         contractABI,
         signer
       );
-      setContractInstance(contract);
+      const responderContract = new ethers.Contract(
+        responderContractAddress,
+        contractABI,
+        signer
+      );
+      setAlerterContractInstance(alerterContract);
+      setResponderContractInstance(responderContract);
 
       console.log("account : " + accounts[0]);
       console.log(signer);
@@ -58,16 +86,20 @@ function App() {
   };
 
   const createAlert = async () => {
-    if (contractInstance) {
+    if (alerterContractInstance) {
       try {
         const title = "2nd Alert";
         const description = "Nuventi ra babu";
-        const transactionInstance = await contractInstance.createAlert(
+        const address = "6000 J Street, Sacramento, CA, USA, 95819";
+        const transactionInstance = await alerterContractInstance.createAlert(
           title,
-          description
+          description,
+          "Fire",
+          address
         );
         await transactionInstance.wait();
         console.log("Alert Created!");
+        // listenToEventUsingAddress(address);
       } catch (error) {
         console.error("Error creating an alert", error);
       }

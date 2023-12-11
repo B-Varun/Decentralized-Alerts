@@ -2,6 +2,18 @@
   "contractName": "Responder",
   "abi": [
     {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_address",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
       "constant": true,
       "inputs": [],
       "name": "management",
@@ -18,33 +30,39 @@
     },
     {
       "constant": false,
-      "inputs": [],
-      "name": "respond",
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "alertId",
+          "type": "uint256"
+        }
+      ],
+      "name": "handleAlert",
       "outputs": [],
       "payable": false,
       "stateMutability": "nonpayable",
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"management\",\"outputs\":[{\"internalType\":\"contract AlertManagement\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"respond\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Responder.sol\":\"Responder\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/AlertManagement.sol\":{\"keccak256\":\"0xa38973dbfab00972af35df300cda69ba6d9c6778d31628483756197cca625092\",\"urls\":[\"bzz-raw://523c0e1498a1bdbfa4c3755ab97d3c1f7152c2d2fb8747adce6f96bed96cced8\",\"dweb:/ipfs/QmdVJsLGaRWLvjsFUxu9tyWxfSexyoCTLBPQSUYYcHbyyo\"]},\"project:/contracts/Responder.sol\":{\"keccak256\":\"0x7a7fff888da6b8d4d46eca56cb4ccd561907a95cd3942b7ee0333a802e11ac51\",\"urls\":[\"bzz-raw://a9e7cb928577160a00f51b7e67296d833021b24bd0fbeca09598db857d2a4dd0\",\"dweb:/ipfs/QmU3Af8NVsKZQ9c1cgUzYGngcLq9iextCoQzjpgENUzQQE\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b5060e38061001f6000396000f3fe6080604052348015600f57600080fd5b506004361060325760003560e01c806388a8d602146037578063db16aab914607f575b600080fd5b603d6087565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b608560ac565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b56fea265627a7a7231582059343d6381eb4f5b418931dc39e417e7be10cc4ce4434c8c9035918f6452cb3264736f6c63430005100032",
-  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060325760003560e01c806388a8d602146037578063db16aab914607f575b600080fd5b603d6087565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b608560ac565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b56fea265627a7a7231582059343d6381eb4f5b418931dc39e417e7be10cc4ce4434c8c9035918f6452cb3264736f6c63430005100032",
-  "sourceMap": "134:309:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;134:309:2;;;;;;;",
-  "deployedSourceMap": "134:309:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;134:309:2;;;;;;;;;;;;;;;;;;;;;;;;156:33;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;403:35;;;:::i;:::-;;156:33;;;;;;;;;;;;;:::o;403:35::-;:::o",
-  "source": "// SPDX-License-Identifier: GPL-3.0\r\n// pragma solidity >=0.8.0 <=0.9.0;\r\npragma solidity >=0.5.16;\r\nimport \"./AlertManagement.sol\";\r\ncontract Responder{\r\n AlertManagement public management;\r\n\r\n//  constructor(address _address) public{\r\n//     management = AlertManagement(_address);\r\n//  }\r\n\r\n// function handleAlert(uint alertId) public{\r\n//     management.close_Alert_By_Responder(alertId);\r\n// }\r\n\r\nfunction respond() public{\r\n    \r\n}\r\n\r\n}",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_address\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"alertId\",\"type\":\"uint256\"}],\"name\":\"handleAlert\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"management\",\"outputs\":[{\"internalType\":\"contract AlertManagement\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Responder.sol\":\"Responder\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/AlertManagement.sol\":{\"keccak256\":\"0x0eb238c91c8209c79635959be99d26cf93d2199c5cd2c40ca12c3b27ecba6b24\",\"urls\":[\"bzz-raw://0a4672df2b6a101075b486297997ae2cbc5770a8e82449f3fbdc0af45848a765\",\"dweb:/ipfs/QmUbQpR37NkLNcMf3tBTiSCeX4XevdnbPMbHhy5NZYyEus\"]},\"project:/contracts/Responder.sol\":{\"keccak256\":\"0x118ce7ac2d07f396e760a9a89106f3d611c733c231701418af96a18248699de5\",\"urls\":[\"bzz-raw://cd284ffba89a193c33402fdca565c71d8c0543e848efca0dde935ed259a0d15f\",\"dweb:/ipfs/QmYZ5HW5ARoFhbJvHKFKP43HqwsJ1xiwBNCVagKduTStvX\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506040516102883803806102888339818101604052602081101561003357600080fd5b8101908080519060200190929190505050806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550506101f4806100946000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c806388a8d6021461003b5780639bd8216d14610085575b600080fd5b6100436100b3565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6100b16004803603602081101561009b57600080fd5b81019080803590602001909291905050506100d8565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166305d2bc1282306040518363ffffffff1660e01b8152600401808381526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200192505050602060405180830381600087803b15801561018057600080fd5b505af1158015610194573d6000803e3d6000fd5b505050506040513d60208110156101aa57600080fd5b8101908080519060200190929190505050505056fea265627a7a72315820c177804ce838a18dafca90eedefa1f4cee8f04f550c196edc2e90c798fd19d0964736f6c63430005100032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c806388a8d6021461003b5780639bd8216d14610085575b600080fd5b6100436100b3565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6100b16004803603602081101561009b57600080fd5b81019080803590602001909291905050506100d8565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166305d2bc1282306040518363ffffffff1660e01b8152600401808381526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200192505050602060405180830381600087803b15801561018057600080fd5b505af1158015610194573d6000803e3d6000fd5b505050506040513d60208110156101aa57600080fd5b8101908080519060200190929190505050505056fea265627a7a72315820c177804ce838a18dafca90eedefa1f4cee8f04f550c196edc2e90c798fd19d0964736f6c63430005100032",
+  "sourceMap": "134:411:1:-;;;195:86;8:9:-1;5:2;;;30:1;27;20:12;5:2;195:86:1;;;;;;;;;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;195:86:1;;;;;;;;;;;;;;;;267:8;238:10;;:38;;;;;;;;;;;;;;;;;;195:86;134:411;;;;;;",
+  "deployedSourceMap": "134:411:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;134:411:1;;;;;;;;;;;;;;;;;;;;;;;;156:33;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;285:111;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;285:111:1;;;;;;;;;;;;;;;;;:::i;:::-;;156:33;;;;;;;;;;;;;:::o;285:111::-;333:10;;;;;;;;;;;:35;;;369:7;386:4;333:59;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;333:59:1;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;333:59:1;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;333:59:1;;;;;;;;;;;;;;;;;285:111;:::o",
+  "source": "// SPDX-License-Identifier: GPL-3.0\r\n// pragma solidity >=0.8.0 <=0.9.0;\r\npragma solidity >=0.5.16;\r\nimport \"./AlertManagement.sol\";\r\ncontract Responder{\r\n AlertManagement public management;\r\n\r\n constructor(address _address) public{\r\n    management = AlertManagement(_address);\r\n }\r\n\r\nfunction handleAlert(uint alertId) public{\r\n    management.close_Alert_By_Responder(alertId, address(this));\r\n}\r\n\r\n// function handleAlertByAddress(string memory addr) public{\r\n//     management.close_Alert_By_Responder_By_Addr(addr, address(this));\r\n// }\r\n\r\n}",
   "sourcePath": "C:\\Users\\varunbailapudi\\Documents\\Fall 2023\\CSC 299\\HardHat Impl\\New folder\\BC Alerts\\contracts\\Responder.sol",
   "ast": {
     "absolutePath": "project:/contracts/Responder.sol",
     "exportedSymbols": {
       "Responder": [
-        177
+        268
       ]
     },
-    "id": 178,
+    "id": 269,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 169,
+        "id": 237,
         "literals": [
           "solidity",
           ">=",
@@ -52,16 +70,16 @@
           ".16"
         ],
         "nodeType": "PragmaDirective",
-        "src": "74:25:2"
+        "src": "74:25:1"
       },
       {
         "absolutePath": "project:/contracts/AlertManagement.sol",
         "file": "./AlertManagement.sol",
-        "id": 170,
+        "id": 238,
         "nodeType": "ImportDirective",
-        "scope": 178,
-        "sourceUnit": 135,
-        "src": "101:31:2",
+        "scope": 269,
+        "sourceUnit": 236,
+        "src": "101:31:1",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -71,35 +89,35 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 177,
+        "id": 268,
         "linearizedBaseContracts": [
-          177
+          268
         ],
         "name": "Responder",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 172,
+            "id": 240,
             "name": "management",
             "nodeType": "VariableDeclaration",
-            "scope": 177,
-            "src": "156:33:2",
+            "scope": 268,
+            "src": "156:33:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_AlertManagement_$134",
+              "typeIdentifier": "t_contract$_AlertManagement_$235",
               "typeString": "contract AlertManagement"
             },
             "typeName": {
               "contractScope": null,
-              "id": 171,
+              "id": 239,
               "name": "AlertManagement",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 134,
-              "src": "156:15:2",
+              "referencedDeclaration": 235,
+              "src": "156:15:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_AlertManagement_$134",
+                "typeIdentifier": "t_contract$_AlertManagement_$235",
                 "typeString": "contract AlertManagement"
               }
             },
@@ -108,49 +126,345 @@
           },
           {
             "body": {
-              "id": 175,
+              "id": 251,
               "nodeType": "Block",
-              "src": "428:10:2",
-              "statements": []
+              "src": "231:50:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 249,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 245,
+                      "name": "management",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 240,
+                      "src": "238:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_AlertManagement_$235",
+                        "typeString": "contract AlertManagement"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 247,
+                          "name": "_address",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 242,
+                          "src": "267:8:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 246,
+                        "name": "AlertManagement",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 235,
+                        "src": "251:15:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_AlertManagement_$235_$",
+                          "typeString": "type(contract AlertManagement)"
+                        }
+                      },
+                      "id": 248,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "251:25:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_AlertManagement_$235",
+                        "typeString": "contract AlertManagement"
+                      }
+                    },
+                    "src": "238:38:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_AlertManagement_$235",
+                      "typeString": "contract AlertManagement"
+                    }
+                  },
+                  "id": 250,
+                  "nodeType": "ExpressionStatement",
+                  "src": "238:38:1"
+                }
+              ]
             },
             "documentation": null,
-            "id": 176,
+            "id": 252,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 243,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 242,
+                  "name": "_address",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 252,
+                  "src": "207:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 241,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "207:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "206:18:1"
+            },
+            "returnParameters": {
+              "id": 244,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "231:0:1"
+            },
+            "scope": 268,
+            "src": "195:86:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 266,
+              "nodeType": "Block",
+              "src": "326:70:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 260,
+                        "name": "alertId",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 254,
+                        "src": "369:7:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 262,
+                            "name": "this",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 299,
+                            "src": "386:4:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_Responder_$268",
+                              "typeString": "contract Responder"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_contract$_Responder_$268",
+                              "typeString": "contract Responder"
+                            }
+                          ],
+                          "id": 261,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "378:7:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_address_$",
+                            "typeString": "type(address)"
+                          },
+                          "typeName": "address"
+                        },
+                        "id": 263,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "378:13:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 257,
+                        "name": "management",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 240,
+                        "src": "333:10:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_AlertManagement_$235",
+                          "typeString": "contract AlertManagement"
+                        }
+                      },
+                      "id": 259,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "close_Alert_By_Responder",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 84,
+                      "src": "333:35:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_uint256_$_t_address_$returns$_t_enum$_Alert_Status_$7_$",
+                        "typeString": "function (uint256,address) external returns (enum AlertManagement.Alert_Status)"
+                      }
+                    },
+                    "id": 264,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "333:59:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_Alert_Status_$7",
+                      "typeString": "enum AlertManagement.Alert_Status"
+                    }
+                  },
+                  "id": 265,
+                  "nodeType": "ExpressionStatement",
+                  "src": "333:59:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 267,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
-            "name": "respond",
+            "name": "handleAlert",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 173,
+              "id": 255,
               "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "419:2:2"
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 254,
+                  "name": "alertId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 267,
+                  "src": "306:12:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 253,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "306:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "305:14:1"
             },
             "returnParameters": {
-              "id": 174,
+              "id": 256,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "428:0:2"
+              "src": "326:0:1"
             },
-            "scope": 177,
-            "src": "403:35:2",
+            "scope": 268,
+            "src": "285:111:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 178,
-        "src": "134:309:2"
+        "scope": 269,
+        "src": "134:411:1"
       }
     ],
-    "src": "74:369:2"
+    "src": "74:471:1"
   },
   "legacyAST": {
     "attributes": {
       "absolutePath": "project:/contracts/Responder.sol",
       "exportedSymbols": {
         "Responder": [
-          177
+          268
         ]
       }
     },
@@ -164,24 +478,24 @@
             ".16"
           ]
         },
-        "id": 169,
+        "id": 237,
         "name": "PragmaDirective",
-        "src": "74:25:2"
+        "src": "74:25:1"
       },
       {
         "attributes": {
-          "SourceUnit": 135,
+          "SourceUnit": 236,
           "absolutePath": "project:/contracts/AlertManagement.sol",
           "file": "./AlertManagement.sol",
-          "scope": 178,
+          "scope": 269,
           "symbolAliases": [
             null
           ],
           "unitAlias": ""
         },
-        "id": 170,
+        "id": 238,
         "name": "ImportDirective",
-        "src": "101:31:2"
+        "src": "101:31:1"
       },
       {
         "attributes": {
@@ -195,17 +509,17 @@
           "documentation": null,
           "fullyImplemented": true,
           "linearizedBaseContracts": [
-            177
+            268
           ],
           "name": "Responder",
-          "scope": 178
+          "scope": 269
         },
         "children": [
           {
             "attributes": {
               "constant": false,
               "name": "management",
-              "scope": 177,
+              "scope": 268,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "contract AlertManagement",
@@ -217,17 +531,180 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "AlertManagement",
-                  "referencedDeclaration": 134,
+                  "referencedDeclaration": 235,
                   "type": "contract AlertManagement"
                 },
-                "id": 171,
+                "id": 239,
                 "name": "UserDefinedTypeName",
-                "src": "156:15:2"
+                "src": "156:15:1"
               }
             ],
-            "id": 172,
+            "id": 240,
             "name": "VariableDeclaration",
-            "src": "156:33:2"
+            "src": "156:33:1"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": true,
+              "kind": "constructor",
+              "modifiers": [
+                null
+              ],
+              "name": "",
+              "scope": 268,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_address",
+                      "scope": 252,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 241,
+                        "name": "ElementaryTypeName",
+                        "src": "207:7:1"
+                      }
+                    ],
+                    "id": 242,
+                    "name": "VariableDeclaration",
+                    "src": "207:16:1"
+                  }
+                ],
+                "id": 243,
+                "name": "ParameterList",
+                "src": "206:18:1"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 244,
+                "name": "ParameterList",
+                "src": "231:0:1"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "contract AlertManagement"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 240,
+                              "type": "contract AlertManagement",
+                              "value": "management"
+                            },
+                            "id": 245,
+                            "name": "Identifier",
+                            "src": "238:10:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "type": "contract AlertManagement",
+                              "type_conversion": true
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_address",
+                                      "typeString": "address"
+                                    }
+                                  ],
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 235,
+                                  "type": "type(contract AlertManagement)",
+                                  "value": "AlertManagement"
+                                },
+                                "id": 246,
+                                "name": "Identifier",
+                                "src": "251:15:1"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 242,
+                                  "type": "address",
+                                  "value": "_address"
+                                },
+                                "id": 247,
+                                "name": "Identifier",
+                                "src": "267:8:1"
+                              }
+                            ],
+                            "id": 248,
+                            "name": "FunctionCall",
+                            "src": "251:25:1"
+                          }
+                        ],
+                        "id": 249,
+                        "name": "Assignment",
+                        "src": "238:38:1"
+                      }
+                    ],
+                    "id": 250,
+                    "name": "ExpressionStatement",
+                    "src": "238:38:1"
+                  }
+                ],
+                "id": 251,
+                "name": "Block",
+                "src": "231:50:1"
+              }
+            ],
+            "id": 252,
+            "name": "FunctionDefinition",
+            "src": "195:86:1"
           },
           {
             "attributes": {
@@ -238,23 +715,45 @@
               "modifiers": [
                 null
               ],
-              "name": "respond",
-              "scope": 177,
+              "name": "handleAlert",
+              "scope": 268,
               "stateMutability": "nonpayable",
               "superFunction": null,
               "visibility": "public"
             },
             "children": [
               {
-                "attributes": {
-                  "parameters": [
-                    null
-                  ]
-                },
-                "children": [],
-                "id": 173,
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "alertId",
+                      "scope": 267,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 253,
+                        "name": "ElementaryTypeName",
+                        "src": "306:4:1"
+                      }
+                    ],
+                    "id": 254,
+                    "name": "VariableDeclaration",
+                    "src": "306:12:1"
+                  }
+                ],
+                "id": 255,
                 "name": "ParameterList",
-                "src": "419:2:2"
+                "src": "305:14:1"
               },
               {
                 "attributes": {
@@ -263,51 +762,173 @@
                   ]
                 },
                 "children": [],
-                "id": 174,
+                "id": 256,
                 "name": "ParameterList",
-                "src": "428:0:2"
+                "src": "326:0:1"
               },
               {
-                "attributes": {
-                  "statements": [
-                    null
-                  ]
-                },
-                "children": [],
-                "id": 175,
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "enum AlertManagement.Alert_Status",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                },
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "close_Alert_By_Responder",
+                              "referencedDeclaration": 84,
+                              "type": "function (uint256,address) external returns (enum AlertManagement.Alert_Status)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 240,
+                                  "type": "contract AlertManagement",
+                                  "value": "management"
+                                },
+                                "id": 257,
+                                "name": "Identifier",
+                                "src": "333:10:1"
+                              }
+                            ],
+                            "id": 259,
+                            "name": "MemberAccess",
+                            "src": "333:35:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 254,
+                              "type": "uint256",
+                              "value": "alertId"
+                            },
+                            "id": 260,
+                            "name": "Identifier",
+                            "src": "369:7:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "type": "address",
+                              "type_conversion": true
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_contract$_Responder_$268",
+                                      "typeString": "contract Responder"
+                                    }
+                                  ],
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "type": "type(address)",
+                                  "value": "address"
+                                },
+                                "id": 261,
+                                "name": "ElementaryTypeNameExpression",
+                                "src": "378:7:1"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 299,
+                                  "type": "contract Responder",
+                                  "value": "this"
+                                },
+                                "id": 262,
+                                "name": "Identifier",
+                                "src": "386:4:1"
+                              }
+                            ],
+                            "id": 263,
+                            "name": "FunctionCall",
+                            "src": "378:13:1"
+                          }
+                        ],
+                        "id": 264,
+                        "name": "FunctionCall",
+                        "src": "333:59:1"
+                      }
+                    ],
+                    "id": 265,
+                    "name": "ExpressionStatement",
+                    "src": "333:59:1"
+                  }
+                ],
+                "id": 266,
                 "name": "Block",
-                "src": "428:10:2"
+                "src": "326:70:1"
               }
             ],
-            "id": 176,
+            "id": 267,
             "name": "FunctionDefinition",
-            "src": "403:35:2"
+            "src": "285:111:1"
           }
         ],
-        "id": 177,
+        "id": 268,
         "name": "ContractDefinition",
-        "src": "134:309:2"
+        "src": "134:411:1"
       }
     ],
-    "id": 178,
+    "id": 269,
     "name": "SourceUnit",
-    "src": "74:369:2"
+    "src": "74:471:1"
   },
   "compiler": {
     "name": "solc",
     "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
   },
-  "networks": {
-    "5777": {
-      "events": {},
-      "links": {},
-      "address": "0x48C150F272c5aA683802821E4902d5e18FF7C919",
-      "transactionHash": "0x8860df6e47ae31491b550a3e16e0f1476446e34d048ce0204468dd4a3262b3f7"
-    }
-  },
+  "networks": {},
   "schemaVersion": "3.4.16",
-  "updatedAt": "2023-11-30T22:57:19.904Z",
-  "networkType": "ethereum",
+  "updatedAt": "2023-12-11T20:10:02.022Z",
   "devdoc": {
     "methods": {}
   },
